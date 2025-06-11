@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ms">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Borang Keahlian PERPAKES</title>
+
+  <!-- Select2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Select2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="header">
+    <h2>Borang Keahlian Persatuan Pancaragam Kesatria (PERPAKES)</h2>
+    <div class="logo-container">
+      <img src="uitm.png" alt="UiTM Logo" />
+      <img src="perpakes.png" alt="Kesatria Logo" />
+    </div>
+  </div>
+
+  <nav>
+    <a href="index.html">Laman Utama</a>
+    <a href="borang.html" class="active">Borang Keahlian</a>
+    <a href="profile.html">Profil</a>
+  </nav>
+
+  <!-- Start Form -->
+  <form id="borangKeahlian">
+    <div class="section">
+      <h3>UNTUK DIISI OLEH AHLI</h3>
+
+      <div class="form-row">
+        <label for="nama_penuh">Nama Penuh:
+          <input type="text" id="nama_penuh" name="nama_penuh" required autocomplete="off" />
+        </label>
+        <label for="kad_pelajar">No. Kad Pelajar:
+          <input type="text" id="kad_pelajar" name="kad_pelajar" required pattern="\d{10}"
+            title="Masukkan 10 digit nombor kad pelajar" placeholder="Contoh:2023389227" />
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label for="no_kp">No. KP:
+          <input type="text" id="no_kp" name="no_kp" required pattern="\d{12}"
+            title="Masukkan 12 digit nombor tanpa tanda sempang" placeholder="Contoh:010313021231" />
+        </label>
+        <label for="tarikh_tamat">Tarikh Tamat Pengajian:
+          <input type="date" id="tarikh_tamat" name="tarikh_tamat" required />
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label for="fakulti">Fakulti:
+          <select id="fakulti" name="fakulti" required>
+            <option disabled selected value="">-- Sila Pilih Fakulti --</option>
+            <option value="Perakaunan">Fakulti Perakaunan</option>
+            <option value="Sains Pentadbiran dan Polisi">
+              Fakulti Sains Pentadbiran dan Pengajian Polisi
+            </option>
+            <option value="Sains Kesihatan">Fakulti Sains Kesihatan</option>
+            <option value="Sains Gunaan">Fakulti Sains Gunaan</option>
+            <option value="Sains Sukan dan Rekreasi">Fakulti Sains Sukan dan Rekreasi</option>
+            <option value="Komunikasi dan Media">Fakulti Komunikasi dan Pengajian Media</option>
+            <option value="Sains Komputer dan Matematik">Fakulti Sains Komputer dan Matematik</option>
+            <option value="Pengurusan dan Perniagaan">Fakulti Pengurusan dan Perniagaan</option>
+            <option value="Sains Maklumat">Fakulti Sains Maklumat</option>
+          </select>
+        </label>
+
+        <label for="kodKursus">Kod Kursus:
+          <select id="kodKursus" name="kodKursus" required>
+            <option disabled selected value="">-- Sila Pilih Kursus --</option>
+          </select>
+        </label>
+      </div>
+
+      <label for="alamat_kediaman">
+        Alamat Kediaman <span
+          title="Format Kolej: NO 12 CENGAL 7 | Luar Kolej: NO 37, TAMAN ABC, 12345 BANDAR, NEGERI | NR jika luar kolej"
+          style="cursor: help">ℹ️</span>
+      </label>
+      <input type="text" id="alamat_kediaman" name="alamat_kediaman" required autocomplete="off" />
+      <small style="display: block; margin-top: 5px">
+        <strong>Wajib ikut format</strong>:<br />
+        🔹 Kolej: <code>NO 12 CENGAL 7</code><br />
+        🔹 Luar Kolej:
+        <code>NO 28,TAMAN MAHKOTA JALAN MAHKOTA 3 BANDAR DARULAMAN,06000 JITRA,KEDAH</code><br />
+        🔹 Jika bukan kolej: <strong>NR</strong>
+      </small>
+
+      <div class="form-row">
+        <label for="no_hp">No. untuk dihubungi (HP):
+          <input type="text" id="no_hp" name="no_hp" pattern="\d{10,11}" maxlength="11" required
+            title="Masukkan nombor telefon bimbit yang sah (10-11 digit)" placeholder="Contoh:019532560" />
+        </label>
+        <label for="kemahiran_muzik">Kemahiran Alat Muzik:
+          <input type="text" id="kemahiran_muzik" name="kemahiran_muzik" pattern="[A-Za-zÀ-ÿ0-9\s'.-]*"
+            title="Hanya huruf, nombor dan ruang dibenarkan" />
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label for="nama_waris">Nama Waris:
+          <input type="text" id="nama_waris" name="nama_waris" pattern="[A-Za-zÀ-ž\s]+" required
+            title="Nama waris hanya boleh mengandungi huruf dan ruang" />
+        </label>
+        <label for="tel_waris">No. Tel Waris:
+          <input type="text" id="tel_waris" name="tel_waris" pattern="\d{10,11}" maxlength="11" required
+            title="Masukkan nombor telefon bimbit yang sah (10-11 digit)" placeholder="Contoh:019532560" />
+        </label>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>TERMA DAN SYARAT</h3>
+      <ol>
+        <li>Mematuhi sahsiah rupadiri pelajar UiTM</li>
+        <li>Mengikuti latihan-latihan wajib yang ditetapkan oleh persatuan</li>
+        <li>Mematuhi peraturan dan arahan yang dikeluarkan oleh persatuan dan UiTM</li>
+        <li>Memelihara nama baik persatuan dan UiTM</li>
+      </ol>
+      <p>
+        Jika saya gagal mematuhi perkara-perkara di atas, maka saya rela untuk diambil tindakan tatatertib mengikut
+        kepada peraturan yang dikeluarkan dari semasa ke semasa.
+      </p>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px">
+      <button type="submit">Hantar Borang</button>
+    </div>
+  </form>
+
+  <div id="preview" style="display: none">
+    <h3>Maklumat Disimpan</h3>
+    <table id="previewTable">
+      <thead>
+        <tr>
+          <th>Label</th>
+          <th>Maklumat</th>
+        </tr>
+      </thead>
+      <tbody id="previewBody">
+     
+      </tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
